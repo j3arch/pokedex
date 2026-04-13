@@ -8,7 +8,7 @@ import (
 )
 
 func startRepl() {
-	//
+	// setup repl
 }
 
 func cleanInput(text string) []string {
