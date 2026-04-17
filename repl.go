@@ -16,3 +16,7 @@ func cleanInput(text string) []string {
 	words := strings.Fields(output)
 	return words
 }
+
+func getCommands() map[string]cliCommand {
+	return nil
+}
