@@ -1,5 +1,9 @@
 package main
 
+import (
+	"fmt"
+)
+
 func main() {
-	startRepl()
+	fmt.Println("Hello, World!")
 }
