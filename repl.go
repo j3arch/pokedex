@@ -11,7 +11,12 @@ func startRepl() {
 	reader := bufio.NewScanner(os.Stdin)
 	for {
 		fmt.Print("Pokedex > ")
-		reader.Scan()
+		if !reader.Scan() {
+			if err := reader.Err(); err != nil {
+				fmt.Println("Error reading input:", err)
+			}
+			break
+		}
 
 		words := cleanInput(reader.Text())
 		if len(words) == 0 {
