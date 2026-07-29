@@ -5,7 +5,15 @@ import (
 	"fmt"
 	"os"
 	"strings"
+
+	"github.com/bootdotdev/pokedexcli/internal/pokeapi"
 )
+
+type config struct {
+	pokeapiClient    pokeapi.Client
+	nextLocationsURL *string
+	prevLocationsURL *string
+}
 
 func startRepl() {
 	reader := bufio.NewScanner(os.Stdin)
