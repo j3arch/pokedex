@@ -7,5 +7,5 @@ type RespShallowLocations struct {
 	Results  []struct {
 		Name string `json:"name"`
 		URL  string `json:"url"`
-	} `json:"result"`
+	} `json:"results"`
 }
