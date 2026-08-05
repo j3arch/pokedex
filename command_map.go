@@ -31,7 +31,7 @@ func commandMapb(cfg *config) error {
 	}
 
 	cfg.nextLocationsURL = locationsResp.Next
-	cfg.nextLocationsURL = locationsResp.Previous
+	cfg.prevLocationsURL = locationsResp.Previous
 
 	for _, loc := range locationsResp.Results {
 		fmt.Println(loc.Name)
