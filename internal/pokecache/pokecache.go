@@ -10,7 +10,18 @@ type Cache struct {
 	mux   *sync.Mutex
 }
 
-type CacheEntry struct {
+type cacheEntry struct {
 	createdAt time.Time
 	val       []byte
+}
+
+func NewCache(interval time.Duration) Cache {
+	c := Cache{
+		cache: make(map[string]cacheEntry),
+		mux:   &sync.Mutex{},
+	}
+
+	//cache map[string]cacheEntry
+
+	return c
 }
