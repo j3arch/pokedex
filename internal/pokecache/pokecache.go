@@ -25,3 +25,12 @@ func NewCache(interval time.Duration) Cache {
 
 	return c
 }
+
+func (c *Cache) Add(key string, value []byte) {
+
+}
+
+func (c *Cache) Get(key string) ([]byte, bool) {
+	val, ok := c.cache[key]
+	return val.val, ok
+}
