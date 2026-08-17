@@ -21,7 +21,7 @@ func NewCache(interval time.Duration) Cache {
 		mux:   &sync.Mutex{},
 	}
 
-	//cache map[string]cacheEntry
+	go c.reapLoop(interval)
 
 	return c
 }
