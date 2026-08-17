@@ -41,3 +41,7 @@ func (c *Cache) reapLoop(interval time.Duration) {
 		c.reap(time.Now().UTC(), interval)
 	}
 }
+
+func (c *Cache) reap(now time.Time, last time.Duration) {
+
+}
