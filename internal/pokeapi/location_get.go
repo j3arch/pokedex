@@ -29,5 +29,13 @@ func (c *Client) GetLocation(locationName string) (Location, error) {
 		return Location{}, err
 	}
 
+	locationResp := Location{}
+	err = json.Unmarshal(dat, &locationResp)
+	if err != nil {
+		return Location{}, err
+	}
+
+	c.cache.Add(url, dat)
+
 	return locationResp, nil
 }
