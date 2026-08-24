@@ -22,6 +22,11 @@ func (c *Client) GetLocation(locationName string) (Location, error) {
 	if err != nil {
 		return Location{}, err
 	}
+
+	resp, err := c.httpClient.Do(req)
+	if err != nil {
+		return Location{}, err
+	}
 	defer resp.Body.Close()
 
 	dat, err := io.ReadAll(resp.Body)
