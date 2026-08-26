@@ -10,6 +10,7 @@ import (
 )
 
 type config struct {
+	commands         map[string]cliCommand
 	pokeapiClient    pokeapi.Client
 	nextLocationsURL *string
 	prevLocationsURL *string
