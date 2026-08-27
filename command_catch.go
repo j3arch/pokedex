@@ -9,4 +9,10 @@ func commandCatch(cfg *config, args ...string) error {
 		return errors.New("You must provide a pokemon name.")
 	}
 
+	name := args[0]
+	pokemon, err := cfg.pokeapiClient.GetPokemon(name)
+	if err != nil {
+		return err
+	}
+
 }
