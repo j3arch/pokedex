@@ -34,4 +34,14 @@ func (c *Client) GetPokemon(pokemonName string) (Pokemon, error) {
 		return Pokemon{}, err
 	}
 
+	pokemonResp := Pokemon{}
+	err = json.Unmarshal(dat, &pokemonResp)
+	if err != nil {
+		return Pokemon{}, err
+	}
+
+	c.cache.Add(url, dat)
+
+	return pokemonResp, nil
+
 }
