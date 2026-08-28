@@ -1,6 +1,9 @@
 package pokeapi
 
-import "encoding/json"
+import (
+	"encoding/json"
+	"net/http"
+)
 
 func (c *Client) GetPokemon(pokemonName string) (Pokemon, error) {
 	url := baseURL + "/pokemon/" + pokemonName
@@ -12,6 +15,11 @@ func (c *Client) GetPokemon(pokemonName string) (Pokemon, error) {
 			return Pokemon{}, err
 		}
 		return pokemonResp, nil
+	}
+
+	req, err := http.NewRequest("GET", url, nil)
+	if err != nil {
+		return Pokemon{}, err
 	}
 
 }
